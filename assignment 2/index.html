@@ -52,7 +52,9 @@
     </div>
 
     <div class="pure-u-1">
-      
+      <h2>Revenue Made by Australian Developers (2019-2024) </h2>
+      <div id = "vis" class="vis-container">
+        </div>
     </div>
     
   </div>
@@ -62,9 +64,12 @@
 
   <script type ="text/javascript">
     var specVis1 = "test.json";
+     var specVis2 = "testtest.json";
     vegaEmbed("#vis", specVis1, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {}).catch(console.error);
   </script>
 
 
 </body>
+
 </html>
