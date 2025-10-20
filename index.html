@@ -1,83 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
 </head>
 <body>
-  <div id="vis"/>
-  <script>
-    const spec = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text":"Australian Cities' Average UV Index in 2024", "fontSize":35, "font":"Helvetica"},
-  "width": 815,
-  "height": 700,
-  "params":[
-    {
-      "name": "Month_select",
-      "value": 1,
-      "bind": {
-        "input": "range",
-        "min": 1,
-        "max": 12,
-        "step": 1,
-        "name": "Month: "
-      }
-    }
-  ],
-  "projection": {"type": "equirectangular", "center":[133 ,-23], "translate":[400,300], "scale":1000},
-  "layer": [
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/CarrieFortuna/FIT3179/refs/heads/main/w9%20hw/map.topojson",
-        "format": {
-          "type": "topojson",
-          "feature": "ne_50m_admin_1_states_provinces"
-        }
-      },
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/CarrieFortuna/FIT3179/refs/heads/main/w10%20hw/bb.csv"
-      },
-      "transform":[
-        {
-          "filter": "datum.Month == Month_select"
-        }
-      ], 
-      "layer":[
-        {
-          "mark": {"type": "circle", "tooltip": {"content": "data"}, "size": 300},
-          "encoding": {
-            "longitude": {"field": "Lon", "type": "quantitative"},
-            "latitude": {"field": "Lat", "type": "quantitative"},
-            "color": {
-              "field": "UV Index",
-              "type": "quantitative",
-              "title": "UV Index",
-              "scale": {"scheme": "reds"}
-            },
-            "tooltip": [
-              {"field": "City", "type": "nominal"},
-              {"field": "UV Index", "type": "quantitative", "format": ".1f"},
-              {"field": "Month", "type": "quantitative","title":"Month"}
-            ]
-          }
-        },
-        {
-        "mark":{"type": "text", "align":"left", "fontStyle":"Italic"},
-        "encoding":{"text": {"field": "City"},
-        "longitude": {"field": "Lon", "type": "quantitative"},
-        "latitude": {"field": "Lat", "type": "quantitative"}}
-        }
-      ]
-    }
-  ]
-};
-    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  <div class="page">
+    
+    <div class="pure-u-1">
+      <h1> Game Development in Australia</h1>
+      <p id="c-align"> The Australian game development scene is much more advanced than you think! </p>
+    </div>
+  
+    <div id="vis" class="vis-container"></div>
+    <div> <p class="smol_text"> Source: Sifter The definitive list of Australian made video games (2021-2024).</p></div>
+      <br/><br/>
+
+    <div class="pure-u-1"> 
+      <br/>
+      <p id="c-align"> Every year, game developers in Australia publish various different games. Among them are some globally famous games such as
+        <span class="db_text"> Hollow Knight</span>, <span class="sil_text">Fruit Ninja!</span>, <span class="dr_text">Cult of The Lamb</span>
+      </p>
+    
+    </div>
+    
+    <div class="pure-u-1-3" id="">
+      <h2>Hollow Knight</h2>
+
+    </div>
+    <div class="pure-u-1-3">
+      <h2>Fruit Ninja!</h2>
+    </div>
+    
+    <div class="pure-u-1-3">
+      <h2>Cult of the Lamb</h2>
+    </div>
+
+    <div class="pure-u-1-3">
+      <h2>Jetpack Joyride</h2>
+    </div>
+
+    <div class="pure-u-1">
+      <h2>Revenue Made by Australian Developers (2019-2024) </h2>
+      <div id = "vis" class="vis-container">
+        </div>
+    </div>
+    
+  </div>
+
+  
+
+
+  <script type ="text/javascript">
+    var specVis1 = "test.json";
+     var specVis2 = "testtest.json";
+    vegaEmbed("#vis", specVis1, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {}).catch(console.error);
   </script>
+
+
 </body>
 
 </html>
