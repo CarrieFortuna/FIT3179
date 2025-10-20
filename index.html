@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
 
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/CarrieFortuna/FIT3179/refs/heads/main/assignment%202/styles.css" media="all">
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
 
 </head>
 <body>
@@ -35,24 +35,27 @@
     
     </div>
     
-    <div class="pure-u-1-3" id="">
+    <div class="pure-u-1-2" id="c-align">
       <h2>Hollow Knight</h2>
-
+      <img src="hk.png">
     </div>
-    <div class="pure-u-1-3">
+    <div class="pure-u-1-3" id="c-align">
       <h2>Fruit Ninja!</h2>
+      <img src="fruit ninja.jpg">
     </div>
     
-    <div class="pure-u-1-3">
+    <div class="pure-u-1-2" id="c-align">
       <h2>Cult of the Lamb</h2>
+      <img src="cult of the lamb.png">
     </div>
 
-    <div class="pure-u-1-3">
+    <div class="pure-u-1-3" id="c-align">
       <h2>Jetpack Joyride</h2>
+      <img src="jetpackjoyride.jpg">
     </div>
 
     <div class="pure-u-1">
-      <h2>Revenue Made by Australian Developers (2019-2024) </h2>
+      <h2 id = "c-align">Revenue Made by Australian Developers (2019-2024) </h2>
       <div id = "vis2" class="vis-container">
         </div>
     </div>
@@ -65,7 +68,7 @@
   <script type ="text/javascript">
     var specVis1 = "https://raw.githubusercontent.com/CarrieFortuna/FIT3179/refs/heads/main/assignment%202/test.json";
      var specVis2 = "https://raw.githubusercontent.com/CarrieFortuna/FIT3179/refs/heads/main/assignment%202/testest.json";
-    vegaEmbed("#vis", specVis1, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+    vegaEmbed("#vis", specVis1, {mode: "vega-lite"});
     vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {}).catch(console.error);
   </script>
 
@@ -73,7 +76,6 @@
 </body>
 
 </html>
-
 
 
 
