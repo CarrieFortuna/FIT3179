@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+</head>
+<body>
+  <div class="page">
+    
+    <div class="pure-u-1">
+      <h1> Game Development in Australia</h1>
+      <p id="c-align"> The Australian game development scene is much more advanced than you think! </p>
+    </div>
+  
+    <div id="vis" class="vis-container"></div>
+    <div> <p class="smol_text"> Source: Sifter The definitive list of Australian made video games (2021-2024).</p></div>
+      <br/><br/>
+
+    <div class="pure-u-1"> 
+      <br/>
+      <p id="c-align"> Every year, game developers in Australia publish various different games. Among them are some globally famous games such as
+        <span class="db_text"> Hollow Knight</span>, <span class="sil_text">Fruit Ninja!</span>, <span class="dr_text">Cult of The Lamb</span>
+      </p>
+    
+    </div>
+    
+    <div class="pure-u-1-3" id="">
+      <h2>Hollow Knight</h2>
+
+    </div>
+    <div class="pure-u-1-3">
+      <h2>Fruit Ninja!</h2>
+    </div>
+    
+    <div class="pure-u-1-3">
+      <h2>Cult of the Lamb</h2>
+    </div>
+
+    <div class="pure-u-1-3">
+      <h2>Jetpack Joyride</h2>
+    </div>
+
+    <div class="pure-u-1">
+      
+    </div>
+    
+  </div>
+
+  
+
+
+  <script type ="text/javascript">
+    var specVis1 = "test.json";
+    vegaEmbed("#vis", specVis1, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+
+
+</body>
+</html>
