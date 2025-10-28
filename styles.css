@@ -1,0 +1,183 @@
+.vis1-container {
+    width:100%;
+    text-align:center;
+    margin-top: 8%;
+    margin-left: 1%;
+    color:#adadad;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.vis2-container {
+    width:100%;
+    text-align:center;
+    align-self: center;
+    color:#adadad;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+   background-image: url("bg.png");
+}
+
+.v1{
+    background-image: url("pc.png");
+    text-align: center;
+    background-repeat:no-repeat;
+    background-position: center;
+    min-height: 1000px;
+    margin: auto;
+}
+
+.phone{
+    background-image: url("phwp.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin:auto;
+    margin-top:200px;
+}
+
+#phone{
+    background-image: url("phwp.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin:auto;
+}
+
+
+#cotl{
+    background-image: url(https://upload.wikimedia.org/wikipedia/en/d/d4/Cult_of_the_Lamb_Key_Art.png);
+    background-repeat: no-repeat;
+    background-size:110%;
+}
+
+.page {
+    width: 1080px;
+    margin: auto;
+    background-color: #1c2638 ;
+    padding: 40px;
+    padding-top: 30px;
+    border-width: 5px ;
+    border-style:dashed;
+    border-color:#f14e52;
+}
+
+h1 {
+    text-align: center;
+    color: #f7f7f7;
+    font-size: 70px;
+    font-family: monospace;
+    border: black;
+    border-width: 3px solid;
+}
+
+p {
+    color: rgb(200, 229, 249);
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#c-align {
+    text-align: center;
+}
+
+#l-align {
+    text-align: left;
+}
+
+#r-align {
+    text-align: right;
+}
+
+.db_text {
+    color: darkblue;
+}
+
+.sil_text {
+    color: darkslategrey;
+}
+
+.blu{
+    color: rgb(200, 229, 249)
+}
+.dr_text {
+    color: red;
+}
+
+.evenbigger_text{
+    color: rgb(200, 229, 249);
+    font-size:50px;
+}
+.bigdata_text{
+    color:#95e0cc;
+    font-size:  40px;
+}
+.medium_text{
+    color:#95e0cc;
+    font-size:30px;
+}
+
+.smol_text{
+    color:grey;
+    font-size:10px;
+    text-align: center;
+}
+
+.controller{
+    border-width: 2px solid black;
+    margin-left: auto;
+    background-image: url(awa.png);
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.pure-u-1-3 {
+    margin-top: 30px;
+    height: 30vw;
+}
+
+.pure-u-1-2 {
+    margin-top: 40px;
+    height: 30vw;
+    margin-right: auto;
+}
+
+#bg_black{
+    background-color:black;
+}
+
+.m_top{
+    margin-top: 50px;
+}
+
+.pure-u-1-2-r {
+    margin-top: auto;
+    height: 30vw;
+    margin-left: auto;
+}
+
+.ph-u-1-2 {
+    margin-top: 30px;
+    height: 30vw;
+    border-width: 2px solid black;
+    margin-right:auto;
+    background-image: url("phone.png");
+}
+
+#controller{
+    background-image: url("controller.png");
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+}
+
+.subtext{
+    color:#daf2e9;
+}
+
+#midmid{
+    text-align: center;
+    vertical-align: center;
+    align-self: center;
+}
+

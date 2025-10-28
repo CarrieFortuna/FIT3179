@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text":"GAMES PRODUCED PER STATE (2021-2024)", 
+    "fontSize":20, "font":"Arial","color":"#1c2638"},
+  "width": 800,
+  "height": 600,
+  "background": "whitesmoke" ,
+  "params":[
+    {
+      "name": "Year_select",
+      "value": 2024,
+      "bind": {
+        "input": "range",
+        "min": 2021,
+        "max": 2024,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "data":{
+    "url":"https://raw.githubusercontent.com/CarrieFortuna/FIT3179/refs/heads/main/assignment%202/australia%20state%20games.csv"
+  },
+  "projection": {"type": "equirectangular", "center":[133 ,-27], "translate":[400,300], "scale":1000},
+  "transform":[ 
+    {"filter":"datum.Year == Year_select"},
+    {
+      "lookup":"State",
+      "from":{
+        "data": {
+          "url": "https://raw.githubusercontent.com/CarrieFortuna/FIT3179/refs/heads/main/w9%20hw/map.topojson",
+         "format": {
+           "type": "topojson",
+           "feature": "ne_50m_admin_1_states_provinces"}
+        },
+        "key":"properties.name"
+      },
+      "as":"geo"
+    }
+  ],
+  "mark":{"type":"geoshape"}, 
+  "encoding": {
+    "shape":{
+      "field":"geo",
+      "type":"geojson"
+    },
+    "color":{
+      "field":"Number of Games",
+      "type":"quantitative",
+      "scale": {"domain":[0,65],"scheme":"blues"},"legend":{"orient": "bottom-left"}
+
+    },
+    "tooltip":[
+      {"field":"State","type": "nominal"},
+      {"field":"Number of Games","type":"quantitative", "title":"Games Developed"}
+    ]
+  }
+}

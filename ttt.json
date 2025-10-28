@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 300,
+  "width": 750,
+  "background":"#3A3E46FF",
+  "params":[
+    {
+      "name": "Year_select",
+      "value": 2019,
+      "bind": {
+        "input": "range",
+        "min": 2019,
+        "max": 2023,
+        "step": 1,
+        "name": "Base Year: "
+      }
+    }
+  ],
+  "data": {
+    "url": "revenue.csv"
+  },
+  "layer":[{
+  "transform": [
+    {"filter":"datum.Year>= Year_select"},
+    {"window": [{"op":"first_value","field": "Revenue","as":"base"}],
+    "sort": [{"field": "Year","order":"ascending"}]},
+    {"calculate": "datum.Revenue/datum.base *100","as":"change"},
+    {"filter":"datum.Revenue >= datum.base"}
+  ]
+  ,
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "nominal",
+      "title":"Year"
+    },
+    "y": {
+      "field": "change",
+      "type": "quantitative",
+      "title":"Percentage Change (%)",
+      "axis":{"grid": false},
+      "stack":null,
+      "scale":{"domainMin":80,"zero":false}
+    },
+    "color":{"condition":{"test":"datum.change==100","value":"#1c2638 "},"value":"#95e0cc "},
+    "tooltip":[
+      {"field":"Year","type": "nominal"},
+      {"field":"change","type":"quantitative", "title":"Percentage Change:","format":".1f"}]
+    }},
+    {
+  "transform": [
+    {"filter":"datum.Year>= Year_select"},
+    {"window": [{"op":"first_value","field": "Revenue","as":"base"}],
+    "sort": [{"field": "Year","order":"ascending"}]},
+    {"calculate": "datum.Revenue/datum.base *100","as":"change"},
+    {"filter":"datum.Revenue <= datum.base"}
+  ]
+  ,
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "nominal",
+      "title":"Year"
+    },
+    "y": {
+      "field": "change",
+      "type": "quantitative",
+      "title":"Percentage Change (%)",
+      "axis":{"grid": false},
+      "stack":null,
+      "scale":{"domainMin":80,"zero":false}
+    },
+    "color":{"condition":{"test":"datum.change == 100","value":"white"},"value":"#9b222b"},
+    "tooltip":[
+      {"field":"Year","type": "nominal"},
+      {"field":"change","type":"quantitative", "title":"Percentage Change:","format":".1f"}]       
+    }}
+  ],"view": {"fillOpacity":0}
+  }
